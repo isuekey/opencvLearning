@@ -10,28 +10,40 @@ export default {
   props:{
     node:{ type: Object, default() { return {}; }, },
   },
+  data() {
+    return {
+      imageInput:[],
+      imageOutput:[],
+    };
+  },
+  methods: {
+    loadedProvider(canvasList) {
+      const vue = this;
+      vue.imageInput = canvasList;
+      return canvasList;
+    },
+    processTheImage(resultList) {
+      const vue = this;
+      vue.imageOutput = resultList;
+      return resultList;
+    },
+  }
 }
 </script>
 <template>
 <div class="display-flex flex-row width-100px">
   <div class="flex-1">
-    <image-provider />
+    <image-provider @loaded="loadedProvider"/>
   </div>
   <div class="flex-2">
-    <code-editor />
+    <code-editor :imageSource="imageInput" @done="processTheImage"/>
   </div>
   <div class="flex-1">
-    <image-output />
+    <image-output :imageOutput="imageOutput"/>
   </div>
 
 </div>
 </template>
 
 <style>
-.flex-1 {
-  flex:1;
-}
-.flex-2 {
-  flex:2;
-}
 </style>

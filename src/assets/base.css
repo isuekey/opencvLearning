@@ -76,8 +76,20 @@ body {
 .position-relative {
   position:relative;
 }
+.position-absolute {
+  position:absolute;
+}
+.top-0 {
+  top:0;
+}
+.left-0 {
+  left:0;
+}
 .display-flex {
-  dipslay:flex;
+  display:flex;
+}
+.display-none {
+  display:none;
 }
 .flex-row {
   flex-direction:row;
@@ -85,11 +97,16 @@ body {
 .flex-col {
   flex-direction:column;
 }
+.flex-1 {
+  flex:1;
+}
+.flex-2 {
+  flex:2;
+}
 
 .width-100p {
   width:100%;
 }
-
 
 .height-100p {
   height:100%;
